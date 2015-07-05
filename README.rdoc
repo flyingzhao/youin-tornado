@@ -3,7 +3,8 @@
 数据库使用mysql数据库
 
 本地搭建好mysql数据库，然后密码设为herald（方便开发，大家密码一致吧，用户是root）
+(修改密码在config/database.yml 注意，密码前必须有个空格，不然报错)
 
 执行bundle install，安装相关包
 
-执行rake db:migrate，会将在你的数据库创建相关数据库
+执行rake db:migrate，会将在你的数据库创建相关数据库（如果报错，则根据错误在mysql数据库先手动添加数据库 create database youin_development)
