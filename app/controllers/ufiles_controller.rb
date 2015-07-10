@@ -1,0 +1,2 @@
+class UfilesController < ApplicationController
+end
