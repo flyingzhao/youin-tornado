@@ -1,14 +1,54 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+	<%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @user.user_id %>
-</p>
+<%= form_for(@user) do |f| %>
+<% if @user.errors.any? %>
+<div id="error_explanation">
+	<h2>
+		<%= pluralize(@user.errors.count, "error") %>prohibited this user from being saved:</h2>
+	<ul>
+		<% @user.errors.full_messages.each do |message| %>
+		<li>
+			<%= message %></li>
+		<% end %></ul>
+</div>
+<% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<div class="field">
+	<%= f.label :user_id %>
+	<br>
+	<%= f.number_field :user_id %></div>
+<div class="field">
+	<%= f.label :name %>
+	<br>
+	<%= f.text_field :name %></div>
+<div class="field">
+	<%= f.label :phone %>
+	<br>
+	<%= f.text_field :phone %></div>
+<div class="field">
+	<%= f.label :sex %>
+	<br>
+	<%= f.text_field :sex %></div>
+<div class="field">
+	<%= f.label :age %>
+	<br>
+	<%= f.text_field :age %></div>
+<div class="field">
+	<%= f.label :school %>
+	<br>
+	<%= f.text_field :school %></div>
+<div class="field">
+	<%= f.label :password %>
+	<br>
+	<%= f.text_field :password %></div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<% if @user.uorders.any? %>
+<h3>
+	uorders (
+	<%= @user.uorders.count %>)</h3>
+<%end%>
+<%end%>
+<%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to '上传文件',new_uorder_path(@user)%>
 <%= link_to 'Back', users_path %>
