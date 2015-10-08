@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# DB_HOST = '115.28.27.150'
-DB_HOST = '127.0.0.1'
-# DB_USER = 'youyinuser'
-DB_USER = 'root'
-# DB_PWD = 'youyin2015'
-DB_PWD = '084358'
+DB_HOST = '115.28.27.150'
+# DB_HOST = '127.0.0.1'
+DB_USER = 'youyinuser'
+# DB_USER = 'root'
+DB_PWD = 'youyin2015'
+# DB_PWD = '084358'
 DB_NAME = 'youyin'
 
 
